@@ -7,8 +7,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'landing-page',
-      component: require('@/components/LandingPage').default
+      name: 'tracker',
+      component: require('@/components/ItemList').default
+    },
+    {
+      path: '/settings',
+      name: 'settings'
     },
     {
       path: '*',
