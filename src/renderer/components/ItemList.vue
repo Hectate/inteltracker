@@ -1,9 +1,13 @@
 <template>
-    <div>
+    <div style="padding-left: 5px;padding-right: 5px;">
+    <div class="content">
         <div v-for="(mission, index) in missions" :key="mission.index">
-            <h1>{{mission.name}} {{intelsFound(index)}}/{{mission.totalIntels}}</h1>
-            <intel-item v-for="item in mission.items" :key="item.id" :id="item.id" :found="intels[item.id]" :info="item"></intel-item>
+            <p>{{mission.name}} {{intelsFound(index)}}/{{mission.totalIntels}}</p>
+            <div v-if="settings.showIcons">
+                <intel-item v-for="item in mission.items" :key="item.id" :id="item.id" :found="intels[item.id]" :info="item"></intel-item>
+            </div>
         </div>
+    </div>
     </div>
 </template>
 
@@ -1737,6 +1741,9 @@ export default {
     computed: {
         intels: function () {
             return this.$store.state.Intel.intels;
+        },
+        settings: function () {
+            return this.$store.state.Settings.settings;
         }
     },
     methods: {

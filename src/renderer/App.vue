@@ -1,25 +1,36 @@
 <template>
-  <div id="app">
+  <div id="app" :style="{
+    backgroundColor: settings.backgroundColor,
+    color: settings.textColor }">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+const path = require('path');
 import store from './store';
 
 import fs from 'fs';
 import chokidar from 'chokidar';
 
 store.dispatch('resetList'); // have to force a reset of the store at startup...
+let gamePath = store.state.Settings.settings.gamePath;
+let savePath = path.join(gamePath, 'Save');
+let filePath = path.join(gamePath, 'Save', 'intel.sav');
 
-const watcher = chokidar.watch('/Games/NOLF1/Save/intel.sav', {persistent: true});
+const watcher = chokidar.watch(gamePath, {persistent: true});
 
+watcher.add(filePath)
 const log = console.log.bind(console);
 
+watcher.on('error', error => log(error));
 watcher.on('add', path => log(`File ${path} has been added`));
+watcher.on('addDir', path => log(`Directory ${path} added.`));
 watcher.on('change', path => {
-  log(`File ${path} has been changed`);
-  parseIntel(path);
+  if(path == filePath) {
+    log(`File ${path} has been changed`);
+    parseIntel(path);
+  }
   });
 
 /*
@@ -28,8 +39,6 @@ watcher.on('change', path => {
 * This function breaks apart the "intel.sav" file into individual items and builds an object structure out of them.
 * The object structure takes the intel number as its key and the value as true if found. Unlisted intels will be assumed as false for not found later.
 * Separately, the UI will compare the two and decide what to show the user based on the status of those keys.
-* The UI should also collapse missions that are completed and expand any that are in-progress. Maybe include logic that warns if the 
-* current mission is collecting intel but the previous is not marked complete, as this implies the runner missed one.
 */
 function parseIntel (path) {
   fs.readFile(path, 'utf8', (err, data) => {
@@ -53,8 +62,6 @@ function parseIntel (path) {
           });
         }
       });
-      //console.log(obj);
-      //return obj;
       store.dispatch('receiveList', obj);
     }
   })
@@ -62,6 +69,11 @@ function parseIntel (path) {
 
   export default {
     name: 'inteltracker',
+    computed: {
+        settings: function () {
+            return this.$store.state.Settings.settings;
+        }
+    },
   }
 </script>
 

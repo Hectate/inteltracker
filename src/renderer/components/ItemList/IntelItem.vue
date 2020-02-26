@@ -1,5 +1,5 @@
 <template>
-        <component :is="iconComponent" :iconColor="[found ? 'black' : 'grey']" height="16pt" width="35"></component>
+        <component :is="iconComponent" :iconColor="[found ? settings.iconFoundColor : settings.iconNotFoundColor]" height="16pt" width="35"></component>
 </template>
 
 <script>
@@ -60,6 +60,9 @@ export default {
     computed: {
         iconComponent: function() {
             return this.types[this.info.type];
+        },
+        settings: function () {
+            return this.$store.state.Settings.settings;
         }
     }
 }

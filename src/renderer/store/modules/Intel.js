@@ -269,9 +269,15 @@ const state = {
   
   const mutations = {
     RECEIVE_INTEL_LIST (state, list) {
+        //switched this up so the list is 'cleaned' each time it's updated too, in case its a reset.
+        for (const item in state.intels) {
+            state.intels[item] = list.intels[item] || false;
+        }
+        /*
         for (const item in list.intels) {
             state.intels[item] = list.intels[item];
         }
+        */
         console.log('List updated.');
         //console.log(state.intels);
     },

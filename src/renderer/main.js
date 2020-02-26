@@ -16,5 +16,27 @@ new Vue({
   components: { App },
   router,
   store,
-  template: '<App/>'
+  template: '<App/>',
+  methods: {
+    toggleSettings() {
+      if(router.currentRoute.path == '/settings') {
+        router.push('/');
+      }
+      else router.push('/settings');
+    }
+  },
+  mounted() {
+      this._keyListener = function(e) {
+          if (e.key === "s" && (e.ctrlKey || e.metaKey)) {
+              e.preventDefault(); // present "Save Page" from getting triggered.
+
+              this.toggleSettings();
+          }
+      };
+
+      document.addEventListener('keydown', this._keyListener.bind(this));
+  },
+  beforeDestroy() {
+      document.removeEventListener('keydown', this._keyListener);
+  }
 }).$mount('#app')
