@@ -2,7 +2,7 @@
     <div style="padding-left: 5px;padding-right: 5px;">
     <div class="content">
         <div v-for="(mission, index) in missions" :key="mission.index">
-            <p>{{mission.name}} {{intelsFound(index)}}/{{mission.totalIntels}}</p>
+            <p>{{mission.name}} {{intelsFound(index)}}/{{mission.items.length}}</p>
             <div v-if="settings.showIcons">
                 <intel-item v-for="item in mission.items" :key="item.id" :id="item.id" :found="intels[item.id]" :info="item"></intel-item>
             </div>
@@ -36,7 +36,6 @@ var data = {
         {
         index: 0,
         name: 'The Assignment',
-        totalIntels: 15,
         items: [
             {
             id: 20531,
@@ -133,7 +132,6 @@ var data = {
         {
         index: 1,
         name: 'Misfortune in Morocco',
-        totalIntels: 40,
         items: [
             {
                 id: 20068,
@@ -386,7 +384,6 @@ var data = {
         {
         index: 3,
         name: 'Berlin by Night',
-        totalIntels: 19,
         items: [
             {
             id: 20091,
@@ -507,7 +504,6 @@ var data = {
         {
         index: 4,
         name: 'Unexpected Turbulence',
-        totalIntels: 7,
         items: [
             {
             id: 20127,
@@ -556,7 +552,6 @@ var data = {
         {
         index: 6,
         name: 'Rendezvous in Hamburg',
-        totalIntels: 8,
         items: [
             {
             id: 20145,
@@ -611,7 +606,6 @@ var data = {
         {
         index: 8,
         name: 'A Tenuous Lead',
-        totalIntels: 23,
         items: [
             {
             id: 20191,
@@ -756,7 +750,6 @@ var data = {
         {
         index: 10,
         name: 'The Dive',
-        totalIntels: 16,
         items: [
             {
             id: 20223,
@@ -859,7 +852,6 @@ var data = {
         {
         index: 12,
         name: 'A Man of Influence',
-        totalIntels: 15,
         items: [
             {
             id: 20264,
@@ -956,7 +948,6 @@ var data = {
         {
         index: 14,
         name: 'Safecracker',
-        totalIntels: 33,
         items: [
             {
                 id: 20306,
@@ -1179,7 +1170,6 @@ var data = {
         {
         index: 16,
         name: 'Rescue Attempt',
-        totalIntels: 18,
         items: [
             {
             id: 20351,
@@ -1294,7 +1284,6 @@ var data = {
         {
         index: 18,
         name: 'Trouble in the Tropics',
-        totalIntels: 19,
         items: [
             {
                 id: 20377,
@@ -1421,7 +1410,6 @@ var data = {
         {
         index: 19,
         name: 'Low Earth Orbit',
-        totalIntels: 12,
         items: [
             {
             id: 20406,
@@ -1500,7 +1488,6 @@ var data = {
         {
         index: 21,
         name: 'Alpine Intrigue',
-        totalIntels: 6,
         items: [
             {
             id: 20433,
@@ -1543,7 +1530,6 @@ var data = {
         {
         index: 22,
         name: 'The Indomitable Cate Archer',
-        totalIntels: 13,
         items: [
             {
                 id: 20495,
@@ -1634,7 +1620,6 @@ var data = {
         {
         index: 24,
         name: 'Such Is the Nature of Revenge',
-        totalIntels: 4,
         items: [
             {
             id: 20527,
@@ -1665,7 +1650,6 @@ var data = {
         {
         index: 25,
         name: 'Rest and Relaxation',
-        totalIntels: 16,
         items: [
             {
                 id: 30076,
@@ -1802,8 +1786,7 @@ export default {
                 if(self.$store.state.Intel.intels[item.id]) { i++; }
             });
             return i;
-        },
-        //mapActions:(['resetList'])
+        }
     }
 }
 </script>
