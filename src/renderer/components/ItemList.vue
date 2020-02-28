@@ -120,12 +120,6 @@ var data = {
             type: 173,
             image: null,
             name: ''
-            },
-            {
-            id: 20062,
-            type: 171,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -133,6 +127,12 @@ var data = {
         index: 1,
         name: 'Misfortune in Morocco',
         items: [
+            {
+            id: 20062,
+            type: 171,
+            image: null,
+            name: ''
+            },
             {
                 id: 20068,
                 type: 171,
@@ -372,12 +372,6 @@ var data = {
             type: 177,
             image: null,
             name: ''
-            },
-            {
-            id: 20104,
-            type: 176,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -385,6 +379,12 @@ var data = {
         index: 3,
         name: 'Berlin by Night',
         items: [
+            {
+            id: 20104,
+            type: 176,
+            image: null,
+            name: ''
+            },
             {
             id: 20091,
             type: 171,
@@ -492,12 +492,6 @@ var data = {
             type: 177,
             image: null,
             name: ''
-            },
-            {
-            id: 20125,
-            type: 172,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -505,6 +499,12 @@ var data = {
         index: 4,
         name: 'Unexpected Turbulence',
         items: [
+            {
+            id: 20125,
+            type: 172,
+            image: null,
+            name: ''
+            },
             {
             id: 20127,
             type: 177,
@@ -540,12 +540,6 @@ var data = {
             type: 175,
             image: null,
             name: ''
-            },
-            {
-            id: 20144,
-            type: 174,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -553,6 +547,12 @@ var data = {
         index: 6,
         name: 'Rendezvous in Hamburg',
         items: [
+            {
+            id: 20144,
+            type: 174,
+            image: null,
+            name: ''
+            },
             {
             id: 20145,
             type: 175,
@@ -594,12 +594,6 @@ var data = {
             type: 175,
             image: null,
             name: ''
-            },
-            {
-            id: 20193,
-            type: 176,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -607,6 +601,12 @@ var data = {
         index: 8,
         name: 'A Tenuous Lead',
         items: [
+            {
+            id: 20193,
+            type: 176,
+            image: null,
+            name: ''
+            },
             {
             id: 20191,
             type: 171,
@@ -738,12 +738,6 @@ var data = {
             type: 171,
             image: null,
             name: ''
-            },
-            {
-            id: 20221,
-            type: 171,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -751,6 +745,12 @@ var data = {
         index: 10,
         name: 'The Dive',
         items: [
+            {
+            id: 20221,
+            type: 171,
+            image: null,
+            name: ''
+            }
             {
             id: 20223,
             type: 173,
@@ -840,12 +840,6 @@ var data = {
             type: 171,
             image: null,
             name: ''
-            },
-            {
-            id: 20263,
-            type: 171,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -853,6 +847,12 @@ var data = {
         index: 12,
         name: 'A Man of Influence',
         items: [
+            {
+            id: 20263,
+            type: 171,
+            image: null,
+            name: ''
+            },
             {
             id: 20264,
             type: 177,
@@ -936,12 +936,6 @@ var data = {
             type: 177,
             image: null,
             name: ''
-            },
-            {
-            id: 20329,
-            type: 171,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -949,6 +943,12 @@ var data = {
         index: 14,
         name: 'Safecracker',
         items: [
+            {
+            id: 20329,
+            type: 171,
+            image: null,
+            name: ''
+            },
             {
                 id: 20306,
                 type: 175,
@@ -1272,12 +1272,6 @@ var data = {
             type: 176,
             image: null,
             name: ''
-            },
-            {
-            id: 20393,
-            type: 177,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -1285,6 +1279,12 @@ var data = {
         index: 18,
         name: 'Trouble in the Tropics',
         items: [
+            {
+            id: 20393,
+            type: 177,
+            image: null,
+            name: ''
+            },
             {
                 id: 20377,
                 type: 177,
@@ -1398,12 +1398,6 @@ var data = {
             type: 176,
             image: null,
             name: ''
-            },
-            {
-            id: 20411,
-            type: 171,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -1411,6 +1405,12 @@ var data = {
         index: 19,
         name: 'Low Earth Orbit',
         items: [
+            {
+            id: 20411,
+            type: 171,
+            image: null,
+            name: ''
+            },
             {
             id: 20406,
             type: 171,
@@ -1476,12 +1476,6 @@ var data = {
             type: 171,
             image: null,
             name: ''
-            },
-            {
-            id: 20431,
-            type: 171,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -1489,6 +1483,12 @@ var data = {
         index: 21,
         name: 'Alpine Intrigue',
         items: [
+            {
+            id: 20431,
+            type: 171,
+            image: null,
+            name: ''
+            },
             {
             id: 20433,
             type: 172,
@@ -1518,12 +1518,6 @@ var data = {
             type: 171,
             image: null,
             name: ''
-            },
-            {
-            id: 8017,
-            type: 198,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -1531,6 +1525,12 @@ var data = {
         index: 22,
         name: 'The Indomitable Cate Archer',
         items: [
+            {
+            id: 8017,
+            type: 198,
+            image: null,
+            name: ''
+            },
             {
                 id: 20495,
                 type: 174,
@@ -1608,12 +1608,6 @@ var data = {
             type: 171,
             image: null,
             name: ''
-            },
-            {
-            id: 20526,
-            type: 174,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -1621,6 +1615,12 @@ var data = {
         index: 24,
         name: 'Such Is the Nature of Revenge',
         items: [
+            {
+            id: 20526,
+            type: 174,
+            image: null,
+            name: ''
+            },
             {
             id: 20527,
             type: 171,
@@ -1638,12 +1638,6 @@ var data = {
             type: 172,
             image: null,
             name: ''
-            },
-            {
-            id: 30081,
-            type: 176,
-            image: null,
-            name: ''
             }
         ]
         },
@@ -1651,6 +1645,12 @@ var data = {
         index: 25,
         name: 'Rest and Relaxation',
         items: [
+            {
+            id: 30081,
+            type: 176,
+            image: null,
+            name: ''
+            },
             {
                 id: 30076,
                 type: 193,
