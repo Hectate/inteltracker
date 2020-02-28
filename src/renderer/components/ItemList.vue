@@ -441,7 +441,7 @@ var data = {
             },
             {
             id: 20095,
-            type: 172,
+            type: 171,
             image: null,
             name: ''
             },
