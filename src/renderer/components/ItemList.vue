@@ -750,7 +750,7 @@ var data = {
             type: 171,
             image: null,
             name: ''
-            }
+            },
             {
             id: 20223,
             type: 173,
@@ -825,13 +825,13 @@ var data = {
             },
             {
             id: 20201,
-            type: 177,
+            type: 171,
             image: null,
             name: ''
             },
             {
             id: 20205,
-            type: 174,
+            type: 172,
             image: null,
             name: ''
             },
