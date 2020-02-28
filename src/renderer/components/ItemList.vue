@@ -75,7 +75,7 @@ var data = {
             name: ''
             },
             {
-            id: 8005,
+            id: 'a8005',
             type: 176,
             image: null,
             name: ''
@@ -135,6 +135,12 @@ var data = {
         name: 'Misfortune in Morocco',
         totalIntels: 40,
         items: [
+            {
+                id: 20068,
+                type: 171,
+                image: null,
+                name: ''
+            },
             {
             id: 20073,
             type: 193,
@@ -898,7 +904,7 @@ var data = {
             name: ''
             },
             {
-            id: 8005,
+            id: 'b8005',
             type: 176,
             image: null,
             name: ''
@@ -952,6 +958,18 @@ var data = {
         name: 'Safecracker',
         totalIntels: 33,
         items: [
+            {
+                id: 20306,
+                type: 175,
+                image: null,
+                name: ''
+            },
+            {
+                id: 20356,
+                type: 171,
+                image: null,
+                name:''
+            },
             {
             id: 20328,
             type: 171,
@@ -1143,14 +1161,20 @@ var data = {
             type: 173,
             image: null,
             name: ''
-            },
-            {
-            id: 20532,
-            type: 193,
-            image: null,
-            name: ''
             }
         ]
+        },
+        {
+            index: 15,
+            name: 'An Ounce of Hope',
+            items: [
+                {
+                    id: 20532,
+                    type: 193,
+                    image: null,
+                    name: ''
+                }
+            ]
         },
         {
         index: 16,
@@ -1194,7 +1218,7 @@ var data = {
             name: ''
             },
             {
-            id: 8013,
+            id: 'a8013',
             type: 195,
             image: null,
             name: ''
@@ -1272,6 +1296,12 @@ var data = {
         name: 'Trouble in the Tropics',
         totalIntels: 19,
         items: [
+            {
+                id: 20377,
+                type: 177,
+                image: null,
+                name: ''
+            },
             {
             id: 20378,
             type: 176,
@@ -1448,7 +1478,7 @@ var data = {
             name: ''
             },
             {
-            id: 8013,
+            id: 'b8013',
             type: 195,
             image: null,
             name: ''
@@ -1515,6 +1545,12 @@ var data = {
         name: 'The Indomitable Cate Archer',
         totalIntels: 13,
         items: [
+            {
+                id: 20495,
+                type: 174,
+                image: null,
+                name: ''
+            },
             {
             id: 20494,
             type: 171,
@@ -1631,6 +1667,18 @@ var data = {
         name: 'Rest and Relaxation',
         totalIntels: 16,
         items: [
+            {
+                id: 30076,
+                type: 193,
+                image: null,
+                name: ''
+            },
+            {
+                id: 30080,
+                type: 193,
+                image: null,
+                name: ''
+            },
             {
             id: 30079,
             type: 172,

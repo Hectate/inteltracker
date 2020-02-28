@@ -8,6 +8,11 @@ Windows builds are attached to the project as a Github release. Download and ext
 
 You may also use the ``build`` instructions below to create it yourself on your machine from the source code. Be sure to run ``install`` first to install the dependencies.
 
+## Known issues
+
+### Unable to capture window using streaming software
+Due to how newer versions of Windows works, you may be unable to capture an image of the window using desktop streaming software. If this happens, try changing compatability settings on the executable. You should set the executable properties to "Run this program in compatibility mode for: Windows 8".
+
 ### Reporting issues
 You may report issues, feedback, or suggestions to this Github project or directly to me in the NOLF Discord channel.
 

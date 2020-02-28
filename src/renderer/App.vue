@@ -49,6 +49,8 @@ function parseIntel (path) {
       data += '\r\n'; //add a newline to make it easier below since the file doesn't have one already
       obj.lines = data.split('\n');
       obj.intels = {};
+      let count8005 = 0;
+      let count8013 = 0;
       obj.lines.forEach(function(line) {
         if(line.startsWith('Intel')) {
           // we now have the individual intel item strings here
@@ -57,6 +59,21 @@ function parseIntel (path) {
             if(!item.startsWith('I')) { //this skips the first half of each line
               let intel = item.slice(1,item.length-2); //trim out the extra space and the final parantheses
               //log(`Sliced out ${intel} from ${item}`);
+              // We have two special cases; intel items 8005 and 8013 are duplicated in two separate missions.
+              // To handle this, we just append 'a' or 'b' to either if it's the first or second time they've been found on this parse.
+              // Since missions are sorted first to last top down, the same way the file is parsed, we will always find the earlier mission first
+              // as long as a speedrunner doesn't decide to skip one of these intels for some reason.
+              // The data store already expects them to have the prefix to describe which mission they were found in.
+              if(intel === '8005') {
+                count8005++;
+                if(count8005 <= 1) { intel = 'a8005'}
+                else intel = 'b8005';
+              }
+              if(intel === '8013') {
+                count8013++;
+                if(count8013 <= 1) { intel = 'a8013'}
+                else intel = 'b8013';
+              }
               obj.intels[intel] = true;
             }
           });
