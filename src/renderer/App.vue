@@ -66,8 +66,9 @@ function parseIntel (path) {
               // The data store already expects them to have the prefix to describe which mission they were found in.
               if(intel === '8005') {
                 count8005++;
-                if(count8005 <= 1) { intel = 'a8005'}
-                else intel = 'b8005';
+                if(count8005 == 1) { intel = 'a8005'}
+                if(count8005 == 2) { intel = 'b8005'}
+                else intel = 'c8005';
               }
               if(intel === '8013') {
                 count8013++;

@@ -1,5 +1,5 @@
 <template>
-        <component :is="iconComponent" :iconColor="[found ? settings.iconFoundColor : settings.iconNotFoundColor]" height="16pt" width="35"></component>
+        <component :is="iconComponent" :iconColor="[found ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
 </template>
 
 <script>

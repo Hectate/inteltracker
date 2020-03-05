@@ -103,7 +103,7 @@
         </div>
         <footer class="footer">
             <div class="content has-text-centered">
-                <p><strong>IntelTracker</strong> by Nathaniel "Hectate" Mitchell. The source code is licensed MIT.</p>
+                <p><strong>IntelTracker</strong> coded by <i>Nathaniel "Hectate" Mitchell</i>, with content contributions by <i>hipp0cat</i>. The source code is licensed MIT.</p>
             </div>
         </footer>
     </div>
