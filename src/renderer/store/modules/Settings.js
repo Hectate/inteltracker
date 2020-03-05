@@ -1,14 +1,3 @@
-/*
-* TODO: have some settings to add later:
-* 1. Collapse upon complete; hide icons of missions completed
-* 2. Scroll-to current mission
-* 3. Overlay for completed icons, w/ color option
-* 4. Change font type, size
-* 5. Progress bars for entire set
-* 6. Make R&R mission optional
-* 7. Custom resorting of icons
-* 8. ???
-*/
 const state = {
     settings: {
         backgroundColor: 'black',

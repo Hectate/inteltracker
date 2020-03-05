@@ -37,9 +37,9 @@
             <div class="field">
                 <label class="label">Mission Title Color</label>
                 <div class="control">
-                    <input disabled :value="settings.headingColor" @input="updateHeadingColor" class="input" type="text" placeholder="Mission Title Color">
+                    <input :value="settings.headingColor" @input="updateHeadingColor" class="input" type="text" placeholder="Mission Title Color">
                 </div>
-                <p class="help">This does nothing right now; use the Text Color below instead.</p>
+                <p class="help">Use a web color name, such as "red", "HotPink", etc.</p>
             </div>
             <div class="field">
                 <label class="label">Text Color</label>
