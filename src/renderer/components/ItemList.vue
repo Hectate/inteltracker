@@ -3,12 +3,12 @@
     <div class="content">
         <div v-for="(mission, index) in missions" :key="mission.index">
             <div v-if="settings.showScenes">
-                <div v-for="(scene, index2) in mission.scenes" :key="scene.num">
+                <div style="padding-bottom: 10px" v-for="(scene, index2) in mission.scenes" :key="scene.num">
                     <p :style="{color: settings.headingColor}" v-if="index2 == 0" class="title is-4">{{mission.name}} {{missionIntelsFound(index)}}/{{missionIntelCount(index)}}</p>
                     <p :style="{color: settings.textColor}" class="subtitle is-6">Scene {{scene.num}} {{sceneIntelsFound(index,index2)}}/{{sceneIntelCount(index,index2)}}</p>
-                    <div v-if="settings.showIcons">
+                    <span v-if="settings.showIcons">
                         <intel-item v-for="item in scene.items" :key="item.id" :id="item.id" :found="intels[item.id]" :info="item"></intel-item>
-                    </div>
+                    </span>
                 </div>
             </div>
             <div v-else>

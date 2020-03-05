@@ -1,5 +1,8 @@
 <template>
-        <component :is="iconComponent" :iconColor="[found ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
+    <div :style="{display: ifHelpShown(!settings.showHelp)}">
+        <component :is="iconComponent" style="vertical-align: middle" :iconColor="[found ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
+        <span v-if="settings.showHelp" class="help" style="display: inline-block; vertical-align: middle">{{info.loc}}</span>
+    </div>
 </template>
 
 <script>
@@ -57,6 +60,12 @@ export default {
     },
     name: 'intel-item',
     props: ['id', 'found', 'info'],
+    methods: {
+        ifHelpShown: function(bool) {
+            if(bool) { return 'inline-block'; }
+            else return 'block';
+        }
+    },
     computed: {
         iconComponent: function() {
             return this.types[this.info.type];
