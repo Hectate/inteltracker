@@ -2,14 +2,21 @@
     <div style="padding-left: 5px;padding-right: 5px;">
     <div class="content">
         <div v-for="(mission, index) in missions" :key="mission.index">
-            <p>{{mission.name}} {{intelsFound(index)}}/{{missionIntelCount(index)}}</p>
-            <div v-if="true">
+            <p>{{mission.name}} {{missionIntelsFound(index)}}/{{missionIntelCount(index)}}</p>
+            <div v-if="settings.showScenes">
                 <div v-for="(scene, index2) in mission.scenes" :key="scene.num">
-                    <p>Scene {{scene.num}}</p>
+                    <p>Scene {{scene.num}} {{sceneIntelsFound(index,index2)}}/{{sceneIntelCount(index,index2)}}</p>
                     <div v-if="settings.showIcons">
                         <intel-item v-for="item in scene.items" :key="item.id" :id="item.id" :found="intels[item.id]" :info="item"></intel-item>
                     </div>
                 </div>
+            </div>
+            <div v-else>
+                <span v-for="(scene, index2) in mission.scenes" :key="scene.num">
+                    <span v-if="settings.showIcons">
+                        <intel-item v-for="item in scene.items" :key="item.id" :id="item.id" :found="intels[item.id]" :info="item"></intel-item>
+                    </span>
+                </span>
             </div>
         </div>
     </div>
@@ -2074,19 +2081,41 @@ export default {
         }
     },
     methods: {
-        missionIntelCount: function (index) {
-            return 999;
-        },
-        intelsFound: function (index) { // TODO this will be broken under the new scene setup, along with the total count per mission
+        missionIntelCount: function (mission) {
             let self = this;
             let i = 0;
-            /*
-            data.missions[index].items.forEach(function(item) {
+            data.missions[mission].scenes.forEach(function(scene) {
+                scene.items.forEach(function(item) {
+                    i++;
+                });
+            });
+            return i;
+        },
+        sceneIntelCount: function (mission, scene) {
+            let self = this;
+            let i = 0;
+            data.missions[mission].scenes[scene].items.forEach(function(item) {
+                i++;
+            });
+            return i;
+        },
+        missionIntelsFound: function (mission) {
+            let self = this;
+            let i = 0;
+            data.missions[mission].scenes.forEach(function(scene) {
+                scene.items.forEach(function(item) {
+                    if(self.$store.state.Intel.intels[item.id]) { i++; }
+                });
+            });
+            return i;
+        },
+        sceneIntelsFound: function (mission, scene) {
+            let self = this;
+            let i = 0;
+            data.missions[mission].scenes[scene].items.forEach(function(item) {
                 if(self.$store.state.Intel.intels[item.id]) { i++; }
             });
             return i;
-            */
-           return 999;
         }
     }
 }

@@ -19,6 +19,7 @@ const state = {
         iconWidth: '35',
         iconHeight: '14pt',
         showIcons: true,
+        showScenes: true,
         windowWidth:100,
         windowHeight:100,
         gamePath:'C:\\Games\\NOLF'
@@ -49,6 +50,9 @@ const state = {
       },
       SET_SHOW_ICONS (state, bool) {
         state.settings.showIcons = (bool === 'true' ? true : false);
+      },
+      SET_SHOW_SCENES (state, bool) {
+        state.settings.showScenes = (bool === 'true' ? true : false);
       },
       SET_WINDOW_WIDTH (state, width) {
         state.settings.windowWidth = width;
@@ -88,6 +92,9 @@ const state = {
     setShowIcons ({commit}, bool) {
         commit('SET_SHOW_ICONS', bool);
     },
+    setShowScenes ({commit}, bool) {
+      commit('SET_SHOW_SCENES', bool);
+  },
     setWindowWidth ({commit}, width) {
         commit('SET_WINDOW_WIDTH', width);
     },

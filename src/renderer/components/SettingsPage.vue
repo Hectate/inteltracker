@@ -84,7 +84,16 @@
                         <option value="false">Hide Icons</option>
                     </select>
                 </div>
-                <p class="help">Allows you to show/hide intel icons. If hidden, only mission titles will be shown.</p>
+                <p class="help">Allows you to show/hide intel icons. If hidden, only mission and scene titles will be shown.</p>
+            </div>
+            <div class="field">
+                <label class="label">Show Scene Grouping and Titles</label>
+                <div class="select">
+                    <select :value="settings.showScenes" @change="updateShowScenes">
+                        <option value="true">Show Scenes</option>
+                        <option value="false">Hide Scenes</option>
+                    </select>
+                </div>
             </div>
             <div class="field">
                 <label class="label">Window Width</label>
@@ -150,6 +159,9 @@ export default {
         },
         updateShowIcons(e) {
             this.$store.dispatch('setShowIcons', e.target.value);
+        },
+        updateShowScenes(e) {
+            this.$store.dispatch('setShowScenes', e.target.value);
         },
         updateWindowWidth(e) {
             this.$store.dispatch('setWindowWidth', e.target.value);
