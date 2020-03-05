@@ -49,7 +49,7 @@
                 <p class="help">Use a web color name, such as "red", "HotPink", etc...</p>
             </div>
             <div class="field">
-                <label class="label">Intel Found Icon Color</label>
+                <label class="label">Intel Found Icon Color <span><svg width="1rem" height="1rem"><rect width="1rem" height="1rem" :style="{fill:settings.iconFoundColor,'stroke-width':3,stroke:'black'}" /></svg></span></label>
                 <div class="control">
                     <input :value="settings.iconFoundColor" @input="updateIconFoundColor" class="input" type="text" placeholder="Intel Found Icon Color">
                 </div>
