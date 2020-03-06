@@ -1,5 +1,14 @@
 <template>
-    <div style="padding-left: 5px;padding-right: 5px;">
+    <div 
+        @mouseover="mouseInWindow = true"
+        @mouseleave="mouseInWindow = false"
+        style="padding-left: 5px;padding-right: 5px;">
+    <button class="button is-small is-rounded" v-if="mouseInWindow" 
+        @mouseover="settingsButtonHover = true"
+        @mouseleave="settingsButtonHover = false"
+        @click="enterSettings()"
+        :style="{opacity: [settingsButtonHover ? 1.0 : 0.3]}"
+        style="position:fixed; top:5px; right:5px">Settings (CTRL+S)</button>
     <div class="content">
         <div v-for="(mission, index) in missions" :key="mission.index">
             <div v-if="settings.showScenes">
@@ -29,6 +38,8 @@ import { mapState, mapActions } from 'vuex';
 import IntelItem from './ItemList/IntelItem';
 
 var data = {
+    mouseInWindow:false,
+    settingsButtonHover:false,
     types: {
         '171':171,  // letter
         '172':172,  // film
@@ -2117,6 +2128,10 @@ export default {
                 if(self.$store.state.Intel.intels[item.id]) { i++; }
             });
             return i;
+        },
+        enterSettings() {
+            data.settingsButtonHover = false; // have to un-hover since this prevents a mouse-out event.
+            this.$router.push('/settings');
         }
     }
 }
