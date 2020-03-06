@@ -2,6 +2,9 @@
 
 > A tracker for speedrunners of No One Lives Forever.
 
+# Download
+The latest version can be found on the [releases page](https://github.com/Hectate/inteltracker/releases/latest/). View the "assets" attached to each release for the zip archive.
+
 ## To use
 
 Windows builds are attached to the project as a Github release. Download and extract the contents of the zip file to use. **Note that ``CTRL + S`` as a shortcut is required to open and close the Settings screen**, which is needed to select the path where the NOLF executable will be running. This is required so the tracker can locate and watch the ``intel.sav`` file. You may freely delete the save file or folder without impacting the tracker; although it will only update the list if intel is collected.
