@@ -60,6 +60,11 @@ export default {
     },
     name: 'intel-item',
     props: ['id', 'found', 'info'],
+    watch: {
+        found() {
+            this.$el.scrollIntoView({behavior:"smooth"});
+        }
+    },
     methods: {
         ifHelpShown: function(bool) {
             if(bool) { return 'inline-block'; }
