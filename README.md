@@ -1,15 +1,17 @@
 # inteltracker
 
-> A tracker for speedrunners of No One Lives Forever.
+> A live tracker for speedrunners of No One Lives Forever.
 
 # Download
 The latest version can be found on the [releases page](https://github.com/Hectate/inteltracker/releases/latest/). View the "assets" attached to each release for the zip archive.
 
 ## To use
 
-Windows builds are attached to the project as a Github release. Download and extract the contents of the zip file to use. **Note that ``CTRL + S`` as a shortcut is required to open and close the Settings screen**, which is needed to select the path where the NOLF executable will be running. This is required so the tracker can locate and watch the ``intel.sav`` file. You may freely delete the save file or folder without impacting the tracker; although it will only update the list if intel is collected.
+Windows builds are attached to the project as a Github release. Download and extract the contents of the zip file to use. **Note that you need to set the path to the NOLF folder in Settings for this to work.** ``CTRL + S`` can be used as a shortcut to open and close the Settings screen, or you can press the Settings button in the top right corner of the window (it disappears if the mouse is not over the window). Setting the path is required so the tracker can locate and watch for changes in the ``intel.sav`` file.
 
-You may also use the ``build`` instructions below to create it yourself on your machine from the source code. Be sure to run ``install`` first to install the dependencies.
+You may freely delete the save file or folder without impacting the tracker; although it will only update the list if intel is collected.
+
+You may also use the ``build`` instructions below to create it yourself on your machine from the source code. Be sure to run ``install`` first to install the dependencies. There may be other prerequisites for building an electron application that are required as well.
 
 ## Known issues
 
