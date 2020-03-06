@@ -107,6 +107,16 @@
                 <p class="help">Allows you to show/hide intel item location help/hints. Icons must be turned on for these to display.</p>
             </div>
             <div class="field">
+                <label class="label">Scroll To Scene</label>
+                <div class="select">
+                    <select :value="settings.scrollToScene" @change="updateScrollToScene">
+                        <option value="true">Scrolling On</option>
+                        <option value="false">Scrolling Off</option>
+                    </select>
+                </div>
+                <p class="help">When new intel items are found, the window will automatically scroll to center that scene in the window if necessary.</p>
+            </div>
+            <div class="field">
                 <label class="label">Window Width</label>
                 <div class="control">
                     <input disabled :value="settings.windowWidth" @input="updateWindowWidth" class="input" type="text" placeholder="Window Width">
@@ -177,6 +187,9 @@ export default {
         },
         updateShowHelp(e) {
             this.$store.dispatch('setShowHelp', e.target.value);
+        },
+        updateScrollToScene(e) {
+            this.$store.dispatch('setScrollToScene', e.target.value);
         },
         updateWindowWidth(e) {
             this.$store.dispatch('setWindowWidth', e.target.value);

@@ -62,7 +62,9 @@ export default {
     props: ['id', 'found', 'info'],
     watch: {
         found() {
-            this.$el.scrollIntoView({behavior:"smooth"});
+            if(this.$store.state.Settings.settings.scrollToScene) {
+                this.$el.parentElement.scrollIntoView({behavior:"smooth"});
+            }
         }
     },
     methods: {
