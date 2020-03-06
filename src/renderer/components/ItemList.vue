@@ -1851,37 +1851,37 @@ var data = {
                         id: 20491,
                         type: 171,
                         image: null,
-                        loc: 'TEXT'
+                        loc: 'On a box in the room to the far back right of the starting point OR On a box in the room to the left from the starting point'
                         },
                         {
                         id: 20492,
                         type: 177,
                         image: null,
-                        loc: 'TEXT'
+                        loc: 'On the control panel for the trains in the control room OR On the large crate to the far right of the train tracks'
                         },
                         {
                         id: 20495, // TODO group this with 20493
                         type: 174,
                         image: null,
-                        loc: 'TEXT'
+                        loc: 'In the pool of water with the shark'
                         },
                         {
                         id: 20493,
                         type: 174,
                         image: null,
-                        loc: 'TEXT'
+                        loc: 'By the couch in the lounge area above the shark pool'
                         },
                         {
                         id: 20494,
                         type: 171,
                         image: null,
-                        loc: 'TEXT'
+                        loc: 'On the shelf in the room with the goat OR On the table in the cafeteria room'
                         },
                         {
                         id: 8017,
                         type: 198,
                         image: null,
-                        loc: 'TEXT'
+                        loc: 'Inside the safe'
                         }
                     ]
                 }
