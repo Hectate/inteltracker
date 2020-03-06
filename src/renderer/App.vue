@@ -64,13 +64,14 @@ function parseIntel (path) {
               // Since missions are sorted first to last top down, the same way the file is parsed, we will always find the earlier mission first
               // as long as a speedrunner doesn't decide to skip one of these intels for some reason.
               // The data store already expects them to have the prefix to describe which mission they were found in.
-              if(intel === '8005') {
+              if(intel == '8005' || intel == 8005) {
+                console.log('intel:' + intel)
                 count8005++;
-                if(count8005 == 1) { intel = 'a8005'}
-                if(count8005 == 2) { intel = 'b8005'}
-                else intel = 'c8005';
+                if(count8005 == 1) { log(count8005); intel = 'a8005'; }
+                else if(count8005 == 2) { log(count8005); intel = 'b8005'; }
+                else { log(count8005); intel = 'c8005'; }
               }
-              if(intel === '8013') {
+              if(intel == '8013') {
                 count8013++;
                 if(count8013 <= 1) { intel = 'a8013'}
                 else intel = 'b8013';
