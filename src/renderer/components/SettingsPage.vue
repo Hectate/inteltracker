@@ -28,35 +28,35 @@
                 <p class="help">Select or input the path to the game folder (not the SAVE folder).</p>
             </div>
             <div class="field">
-                <label class="label">Background Color</label>
+                <label class="label"><span style="vertical-align:middle"><svg width="1rem" height="1rem"><rect width="1rem" height="1rem" :style="{fill:settings.backgroundColor,'stroke-width':3,stroke:'black'}" /></svg></span> Background Color</label>
                 <div class="control">
                     <input :value="settings.backgroundColor" @input="updateBackgroundColor" class="input" type="text" placeholder="Background Color">
                 </div>
                 <p class="help">Use a web color name, such as "red", "HotPink", etc...</p>
             </div>
             <div class="field">
-                <label class="label">Mission Title Color</label>
+                <label class="label"><span style="vertical-align:middle"><svg width="1rem" height="1rem"><rect width="1rem" height="1rem" :style="{fill:settings.headingColor,'stroke-width':3,stroke:'black'}" /></svg></span> Mission Title Color</label>
                 <div class="control">
                     <input :value="settings.headingColor" @input="updateHeadingColor" class="input" type="text" placeholder="Mission Title Color">
                 </div>
                 <p class="help">Use a web color name, such as "red", "HotPink", etc.</p>
             </div>
             <div class="field">
-                <label class="label">Text Color</label>
+                <label class="label"><span style="vertical-align:middle"><svg width="1rem" height="1rem"><rect width="1rem" height="1rem" :style="{fill:settings.textColor,'stroke-width':3,stroke:'black'}" /></svg></span> Text Color</label>
                 <div class="control">
                     <input :value="settings.textColor" @input="updateTextColor" class="input" type="text" placeholder="Text Color">
                 </div>
                 <p class="help">Use a web color name, such as "red", "HotPink", etc...</p>
             </div>
             <div class="field">
-                <label class="label">Intel Found Icon Color <span><svg width="1rem" height="1rem"><rect width="1rem" height="1rem" :style="{fill:settings.iconFoundColor,'stroke-width':3,stroke:'black'}" /></svg></span></label>
+                <label class="label"><span style="vertical-align:middle"><svg width="1rem" height="1rem"><rect width="1rem" height="1rem" :style="{fill:settings.iconFoundColor,'stroke-width':3,stroke:'black'}" /></svg></span> Intel Found Icon Color </label>
                 <div class="control">
                     <input :value="settings.iconFoundColor" @input="updateIconFoundColor" class="input" type="text" placeholder="Intel Found Icon Color">
                 </div>
                 <p class="help">Use a web color name, such as "red", "HotPink", etc...</p>
             </div>
             <div class="field">
-                <label class="label">Intel Not Found Icon Color</label>
+                <label class="label"><span style="vertical-align:middle"><svg width="1rem" height="1rem"><rect width="1rem" height="1rem" :style="{fill:settings.iconNotFoundColor,'stroke-width':3,stroke:'black'}" /></svg></span> Intel Not Found Icon Color</label>
                 <div class="control">
                     <input :value="settings.iconNotFoundColor" @input="updateIconNotFoundColor" class="input" type="text" placeholder="Intel Not Found Icon Color">
                 </div>
@@ -124,6 +124,7 @@
         <footer class="footer">
             <div class="content has-text-centered">
                 <p><strong>IntelTracker</strong> coded by <i>Nathaniel "Hectate" Mitchell</i>, with content contributions by <i>hipp0cat</i>. The source code is licensed MIT.</p>
+                <p>Version {{settings.majorVersion}}.{{settings.minorVersion}}</p>
             </div>
         </footer>
     </div>
