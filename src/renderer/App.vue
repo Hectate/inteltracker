@@ -24,13 +24,24 @@ watcher.add(filePath)
 const log = console.log.bind(console);
 
 watcher.on('error', error => log(error));
-watcher.on('add', path => log(`File ${path} has been added`));
+watcher.on('add', path => {
+  if(path == filePath) {
+    parseIntel(path);
+  }
+  log(`File ${path} has been added`);
+  });
 watcher.on('addDir', path => log(`Directory ${path} added.`));
 watcher.on('change', path => {
   if(path == filePath) {
     log(`File ${path} has been changed`);
     parseIntel(path);
   }
+  });
+watcher.on('unlink', path => {
+  if(path == filePath) {
+    store.dispatch('resetList');
+  }
+  log(`File ${path} has been removed`);
   });
 
 /*
