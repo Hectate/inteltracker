@@ -7,11 +7,14 @@ The latest version can be found on the [releases page](https://github.com/Hectat
 
 ## To use
 
-Windows builds are attached to the project as a Github release. Download and extract the contents of the zip file to use. **Note that you need to set the path to the NOLF folder in Settings for this to work.** ``CTRL + S`` can be used as a shortcut to open and close the Settings screen, or you can press the Settings button in the top right corner of the window (it disappears if the mouse is not over the window). Setting the path is required so the tracker can locate and watch for changes in the ``intel.sav`` file.
+As noted above, Windows builds are attached to the project as a Github release. Download and extract the contents of the zip file, and then launch ``inteltracker.exe``.
 
-You may freely delete the save file or folder without impacting the tracker; although it will only update the list if intel is collected.
+**Note that you need to set the path to the NOLF folder in Settings for the tracker to work.** ``CTRL + S`` can be used as a shortcut to open and close the Settings screen, or you can press the Settings button in the top right corner of the window (it disappears if the mouse is not over the window). Setting the path is required so the tracker can locate and watch for changes in the ``intel.sav`` file.
 
-You may also use the ``build`` instructions below to create it yourself on your machine from the source code. Be sure to run ``install`` first to install the dependencies. There may be other prerequisites for building an electron application that are required as well.
+You may freely delete the ``intel.sav`` file or ``\Save`` folder without effecting the tracker negatively. It will happily clear the list, and later begin updating again if the save file is recreated and populated by the game.
+
+### Building From Source
+You may use the ``build`` instructions below to create it yourself on your machine from the source code. Be sure to run ``install`` first to install the dependencies. There may be other prerequisites for building an electron application that are required as well. If you need help building, first check the [official electron website](https://www.electronjs.org/) for documentation.
 
 ## Known issues
 
