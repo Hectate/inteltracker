@@ -54,7 +54,8 @@ var data = {
         '195':195,  // security pass
         '196':196,  // manifest (on clipboard)
         '197':197,  // captain's log (book)
-        '198':198   // roster (on clipboard)
+        '198':198,  // roster (on clipboard)
+        '999':999   // question mark
     },
     missions: [
         {
@@ -507,7 +508,7 @@ var data = {
                         },
                         {
                         id: 20095,
-                        type: 171, // TODO need to support dual icons here
+                        type: 999, // Dual icons
                         image: null,
                         loc: 'Letter on crates in second basement room OR Film near pillar in the first basement room'
                         }
@@ -568,7 +569,7 @@ var data = {
                         id: 20109,
                         type: 176,
                         image: null,
-                        loc: 'On bench in room at the end of the hall that leads to Dr. Schenker'
+                        loc: 'Envelope on bench in room at the end of the hall that leads to Dr. Schenker AND Loose Files in classroom near Dr. Schenker'
                         }
                     ]
                 }
@@ -773,7 +774,7 @@ var data = {
                         },
                         {
                         id: 20167,
-                        type: 177, // TODO dual icon
+                        type: 999, // dual icon
                         image: null,
                         loc: 'Letter on boxes outside to the right of the floating walkway OR Envelope behind the boxes outside on the barge'
                         },
@@ -890,13 +891,13 @@ var data = {
                         },
                         {
                         id: 20201,
-                        type: 171, // TODO dual icon
+                        type: 999, // dual icon
                         image: null,
                         loc: 'Letter on fireplace mantle OR Envelope on bed, in room to the left of area with 2 guards on upper balconies'
                         },
                         {
                         id: 20203,
-                        type: 178, // TODO dual icon
+                        type: 999, // dual icon
                         image: null,
                         loc: 'Film in room at the end of the hall past guards who shut down the elevator OR Tape in room that maid opens for you'
                         },

@@ -19,6 +19,7 @@ import IconTicket from './Icons/IconTicket';
 import IconSecurityPass from './Icons/IconSecurityPass';
 import IconCaptainsLog from './Icons/IconCaptainsLog';
 import IconRoster from './Icons/IconRoster';
+import IconQuestion from './Icons/IconQuestion';
 
 var data = {
     types: {
@@ -35,7 +36,8 @@ var data = {
         '195':'IconSecurityPass',  // security pass
         '196':'IconRoster',  // manifest (on clipboard) - using Roster for now
         '197':'IconCaptainsLog',  // captain's log (book)
-        '198':'IconRoster'   // roster (on clipboard)
+        '198':'IconRoster',   // roster (on clipboard)
+        '999':'IconQuestion'    // question mark for dual types
     }
 }
 
@@ -53,7 +55,8 @@ export default {
         IconTicket,
         IconSecurityPass,
         IconCaptainsLog,
-        IconRoster
+        IconRoster,
+        IconQuestion
     },
     data: function () {
         return data;
