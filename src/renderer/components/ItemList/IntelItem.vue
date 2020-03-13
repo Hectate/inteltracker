@@ -1,7 +1,7 @@
 <template>
     <div :style="{display: ifHelpShown(!settings.showHelp)}">
-        <div v-if="info.type == 'Group'">
-            <div v-for="(item, index) in info.items" :key="index" :style="{display: ifHelpShown(!settings.showHelp)}">
+        <div v-if="info.type == 'Group'" :style="{outline: settings.iconGroupOutlineStyle}">
+            <div v-for="(item, index) in info.items" :key="index" :style="{display: ifHelpShown(!settings.showHelp), backgroundColor: settings.iconGroupBackgroundColor}">
                 <component :is="groupIconComponent(item.type)" style="vertical-align: middle" :iconColor="[intelFound(item.id) ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
                 <span v-if="settings.showHelp" class="help" style="display: inline-block; vertical-align: middle">{{item.loc}}</span>
             </div>

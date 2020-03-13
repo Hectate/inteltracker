@@ -32,35 +32,49 @@
                 <div class="control">
                     <input :value="settings.backgroundColor" @input="updateBackgroundColor" class="input" type="text" placeholder="Background Color">
                 </div>
-                <p class="help">Use a web color name, such as "red", "HotPink", etc...</p>
+                <p class="help">Use a web color name, such as "red", "HotPink", or hex values like "#4d0026"...</p>
             </div>
             <div class="field">
                 <label class="label"><span style="vertical-align:middle"><svg width="1rem" height="1rem"><rect width="1rem" height="1rem" :style="{fill:settings.headingColor,'stroke-width':3,stroke:'black'}" /></svg></span> Mission Title Color</label>
                 <div class="control">
                     <input :value="settings.headingColor" @input="updateHeadingColor" class="input" type="text" placeholder="Mission Title Color">
                 </div>
-                <p class="help">Use a web color name, such as "red", "HotPink", etc.</p>
+                <p class="help">Use a web color name, such as "red", "HotPink", or hex values like "#4d0026"...</p>
             </div>
             <div class="field">
                 <label class="label"><span style="vertical-align:middle"><svg width="1rem" height="1rem"><rect width="1rem" height="1rem" :style="{fill:settings.textColor,'stroke-width':3,stroke:'black'}" /></svg></span> Text Color</label>
                 <div class="control">
                     <input :value="settings.textColor" @input="updateTextColor" class="input" type="text" placeholder="Text Color">
                 </div>
-                <p class="help">Use a web color name, such as "red", "HotPink", etc...</p>
+                <p class="help">Use a web color name, such as "red", "HotPink", or hex values like "#4d0026"...</p>
             </div>
             <div class="field">
                 <label class="label"><span style="vertical-align:middle"><svg width="1rem" height="1rem"><rect width="1rem" height="1rem" :style="{fill:settings.iconFoundColor,'stroke-width':3,stroke:'black'}" /></svg></span> Intel Found Icon Color </label>
                 <div class="control">
                     <input :value="settings.iconFoundColor" @input="updateIconFoundColor" class="input" type="text" placeholder="Intel Found Icon Color">
                 </div>
-                <p class="help">Use a web color name, such as "red", "HotPink", etc...</p>
+                <p class="help">Use a web color name, such as "red", "HotPink", or hex values like "#4d0026"...</p>
+            </div>
+            <div class="field">
+                <label class="label"><span style="vertical-align:middle"><svg width="1rem" height="1rem" :style="{outline:settings.iconGroupOutlineStyle}"><rect width="1rem" height="1rem" :style="{fill:settings.iconGroupBackgroundColor, outline:settings.iconGroupOutlineStyle}" /></svg></span> Intel Group Outline Style </label>
+                <div class="control">
+                    <input :value="settings.iconGroupOutlineStyle" @input="updateIconGroupOutlineStyle" class="input" type="text" placeholder="Intel Group Outline Style">
+                </div>
+                <p class="help">Use a CSS string with a color, line style, and line thickness, such as "#454545 dotted 2px" or "red solid 5px".</p>
+            </div>
+            <div class="field">
+                <label class="label"><span style="vertical-align:middle"><svg width="1rem" height="1rem"><rect width="1rem" height="1rem" :style="{fill:settings.iconGroupBackgroundColor,'stroke-width':3,stroke:'black'}" /></svg></span> Intel Group Background Color </label>
+                <div class="control">
+                    <input :value="settings.iconGroupBackgroundColor" @input="updateIconGroupBackgroundColor" class="input" type="text" placeholder="Intel Group Background Color">
+                </div>
+                <p class="help">Use a web color name, such as "red", "HotPink", or hex values like "#4d0026"...</p>
             </div>
             <div class="field">
                 <label class="label"><span style="vertical-align:middle"><svg width="1rem" height="1rem"><rect width="1rem" height="1rem" :style="{fill:settings.iconNotFoundColor,'stroke-width':3,stroke:'black'}" /></svg></span> Intel Not Found Icon Color</label>
                 <div class="control">
                     <input :value="settings.iconNotFoundColor" @input="updateIconNotFoundColor" class="input" type="text" placeholder="Intel Not Found Icon Color">
                 </div>
-                <p class="help">Use a web color name, such as "red", "HotPink", etc...</p>
+                <p class="help">Use a web color name, such as "red", "HotPink", or hex values like "#4d0026"...</p>
             </div>
             <div class="field">
                 <label class="label">Icon Width</label>
@@ -172,6 +186,12 @@ export default {
         },
         updateIconNotFoundColor(e) {
             this.$store.dispatch('setIconNotFoundColor', e.target.value);
+        },
+        updateIconGroupOutlineStyle(e) {
+            this.$store.dispatch('setIconGroupOutlineStyle', e.target.value);
+        },
+        updateIconGroupBackgroundColor(e) {
+            this.$store.dispatch('setIconGroupBackgroundColor', e.target.value);
         },
         updateIconWidth(e) {
             this.$store.dispatch('setIconWidth', e.target.value);

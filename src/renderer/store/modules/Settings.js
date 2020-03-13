@@ -7,6 +7,8 @@ const state = {
         textColor: 'white',
         iconFoundColor: 'white',
         iconNotFoundColor: 'grey',
+        iconGroupOutlineStyle: '#454545 dotted 2px',
+        iconGroupBackgroundColor: '#262626',
         iconWidth: '35',
         iconHeight: '14pt',
         showIcons: true,
@@ -34,6 +36,12 @@ const state = {
       },
       SET_ICON_NOT_FOUND_COLOR (state, color) {
         state.settings.iconNotFoundColor = color;
+      },
+      SET_ICON_GROUP_OUTLINE_STYLE (state, style) {
+        state.settings.iconGroupOutlineStyle = style;
+      },
+      SET_ICON_GROUP_BACKGROUND_COLOR (state, color) {
+        state.settings.iconGroupBackgroundColor = color;
       },
       SET_ICON_WIDTH (state, width) {
         state.settings.iconWidth = width;
@@ -81,6 +89,12 @@ const state = {
     },
     setIconNotFoundColor ({commit}, color) {
         commit('SET_ICON_NOT_FOUND_COLOR', color);
+    },
+    setIconGroupOutlineStyle ({commit}, style) {
+      commit('SET_ICON_GROUP_OUTLINE_STYLE', style);
+    },
+    setIconGroupBackgroundColor ({commit}, color) {
+      commit('SET_ICON_GROUP_BACKGROUND_COLOR', color);
     },
     setIconWidth ({commit}, width) {
         commit('SET_ICON_WIDTH', width);
