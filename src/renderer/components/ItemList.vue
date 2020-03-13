@@ -67,6 +67,24 @@ var data = {
                     num:3,
                     items: [
                         {
+                            // test group, DELETE ME
+                            type: 'Group',
+                            items: [
+                                {
+                                id: 20531,
+                                type: 193,
+                                image: null,
+                                loc: 'On wall after picking locks and before poison dagger training'
+                                },
+                                {
+                                id: 20538,
+                                type: 175,
+                                image: null,
+                                loc: 'On table after lockpick training'
+                                }
+                            ]
+                        },
+                        {
                         id: 20531,
                         type: 193,
                         image: null,

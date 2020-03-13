@@ -1,7 +1,15 @@
 <template>
     <div :style="{display: ifHelpShown(!settings.showHelp)}">
-        <component :is="iconComponent" style="vertical-align: middle" :iconColor="[found ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
-        <span v-if="settings.showHelp" class="help" style="display: inline-block; vertical-align: middle">{{info.loc}}</span>
+        <div v-if="info.type == 'Group'">
+            <div v-for="(item, index) in info.items" :key="index" :style="{display: ifHelpShown(!settings.showHelp)}">
+                <component :is="groupIconComponent(item.type)" style="vertical-align: middle" :iconColor="[found ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
+                <span v-if="settings.showHelp" class="help" style="display: inline-block; vertical-align: middle">{{item.loc}}</span>
+            </div>
+        </div>
+        <div v-else>
+            <component :is="iconComponent" style="vertical-align: middle" :iconColor="[found ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
+            <span v-if="settings.showHelp" class="help" style="display: inline-block; vertical-align: middle">{{info.loc}}</span>
+        </div>
     </div>
 </template>
 
@@ -37,7 +45,7 @@ var data = {
         '196':'IconRoster',  // manifest (on clipboard) - using Roster for now
         '197':'IconCaptainsLog',  // captain's log (book)
         '198':'IconRoster',   // roster (on clipboard)
-        '999':'IconQuestion'    // question mark for dual types
+        '999':'IconQuestion'  // question mark for dual types
     }
 }
 
@@ -71,6 +79,9 @@ export default {
         }
     },
     methods: {
+        groupIconComponent: function(type) {
+            return this.types[type];
+        },
         ifHelpShown: function(bool) {
             if(bool) { return 'inline-block'; }
             else return 'block';
@@ -82,6 +93,9 @@ export default {
         },
         settings: function () {
             return this.$store.state.Settings.settings;
+        },
+        intels: function() {
+            return this.$store.state.Intel.intels;
         }
     }
 }
