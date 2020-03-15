@@ -1,7 +1,7 @@
 const state = {
     settings: {
         majorVersion:0,
-        minorVersion:7,
+        minorVersion:8,
         backgroundColor: 'black',
         headingColor: 'white',
         textColor: 'white',
