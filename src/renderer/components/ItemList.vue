@@ -67,24 +67,6 @@ var data = {
                     num:3,
                     items: [
                         {
-                            // test group, DELETE ME
-                            type: 'Group',
-                            items: [
-                                {
-                                id: 20531,
-                                type: 193,
-                                image: null,
-                                loc: 'On wall after picking locks and before poison dagger training'
-                                },
-                                {
-                                id: 20538,
-                                type: 175,
-                                image: null,
-                                loc: 'On table after lockpick training'
-                                }
-                            ]
-                        },
-                        {
                         id: 20531,
                         type: 193,
                         image: null,
@@ -394,16 +376,21 @@ var data = {
                         loc: 'Near van in mine field'
                         },
                         {
-                        id: 20066,
-                        type: 171,
-                        image: null,
-                        loc: 'Near vase after coming out of water (in the well)'
-                        },
-                        {
-                        id: 20065,
-                        type: 171,
-                        image: null,
-                        loc: 'In the water (near landing with 2 guards)'
+                            type: "Group",
+                            items: [
+                                {
+                                id: 20066,
+                                type: 171,
+                                image: null,
+                                loc: 'Near vase after coming out of water (in the well)'
+                                },
+                                {
+                                id: 20065,
+                                type: 171,
+                                image: null,
+                                loc: 'In the water (near landing with 2 guards)'
+                                }
+                            ]
                         },
                         {
                         id: 20067,
@@ -412,40 +399,55 @@ var data = {
                         loc: 'Behind chair OR near crate in room with 2 guards'
                         },
                         {
-                        id: 20069,
-                        type: 171,
-                        image: null,
-                        loc: 'On wall near 2 guards talking about the ship'
+                            type: "Group",
+                            items: [
+                                {
+                                id: 20069,
+                                type: 171,
+                                image: null,
+                                loc: 'On wall near 2 guards talking about the ship'
+                                },
+                                {
+                                id: 20062,
+                                type: 171,
+                                image: null,
+                                loc: 'On wall just past 2 guards talking about the ship'
+                                }
+                            ]
                         },
                         {
-                        id: 20062,
-                        type: 171,
-                        image: null,
-                        loc: 'On wall just past 2 guards talking about the ship'
+                            type: "Group",
+                            items: [
+                               {
+                                id: 20071,
+                                type: 172,
+                                image: null,
+                                loc: 'Under fountain past generator room'
+                                },
+                                {
+                                id: 20064,
+                                type: 177,
+                                image: null,
+                                loc: 'On ground past guard who shoots other guard'
+                                }
+                            ]
                         },
                         {
-                        id: 20071,
-                        type: 172,
-                        image: null,
-                        loc: 'Under fountain past generator room'
-                        },
-                        {
-                        id: 20064,
-                        type: 177,
-                        image: null,
-                        loc: 'On ground past guard who shoots other guard'
-                        },
-                        {
-                        id: 20068,
-                        type: 171,
-                        image: null,
-                        loc: 'On crates in hallway before the generator room'
-                        },
-                        {
-                        id: 20070,
-                        type: 174,
-                        image: null,
-                        loc: 'Behind generator'
+                            type: "Group",
+                            items: [
+                                {
+                                id: 20068,
+                                type: 171,
+                                image: null,
+                                loc: 'On crates in hallway before the generator room'
+                                },
+                                {
+                                id: 20070,
+                                type: 174,
+                                image: null,
+                                loc: 'Behind generator'
+                                }
+                            ]
                         },
                         {
                         id: 20061,
@@ -896,16 +898,21 @@ var data = {
                     num:1,
                     items:[
                         {
-                        id: 20202,
-                        type: 171,
-                        image: null,
-                        loc: 'In empty room across the hall from where you start'
-                        },
-                        {
-                        id: 20205,
-                        type: 174,
-                        image: null,
-                        loc: 'Near the luggage rack in area with guards on upper balconies'
+                            type: "Group",
+                            items: [
+                                {
+                                id: 20202,
+                                type: 171,
+                                image: null,
+                                loc: 'In empty room across the hall from where you start'
+                                },
+                                {
+                                id: 20205,
+                                type: 174,
+                                image: null,
+                                loc: 'Near the luggage rack in area with guards on upper balconies'
+                                }
+                            ]
                         },
                         {
                         id: 20201,
@@ -1225,16 +1232,21 @@ var data = {
                         loc: 'By the lockers through the 1st set of doors in the level OR In the room downstairs looking out at the red barrels'
                         },
                         {
-                        id: 20303,
-                        type: 176,
-                        image: null,
-                        loc: 'Under the large furnace vent located in the room next to the window washer power room'
-                        },
-                        {
-                        id: 'c8005',
-                        type: 176,
-                        image: null,
-                        loc: 'On the table by the pool'
+                            type: "Group",
+                            items: [
+                                {
+                                id: 20303,
+                                type: 176,
+                                image: null,
+                                loc: 'Under the large furnace vent located in the room next to the window washer power room'
+                                },
+                                {
+                                id: 'c8005',
+                                type: 176,
+                                image: null,
+                                loc: 'On the table by the pool'
+                                },
+                            ]
                         },
                         {
                         id: 20304,
@@ -1278,16 +1290,21 @@ var data = {
                         loc: 'On desk on lower floor cubicle area OR Under the desk in the lower cubicle area'
                         },
                         {
-                        id: 20307,
-                        type: 175,
-                        image: null,
-                        loc: 'On top of middle toilet in Men\'s restroom'
-                        },
-                        {
-                        id: 20306,
-                        type: 175,
-                        image: null,
-                        loc: 'On top of the far toilet in the Women\'s restroom'
+                            type: "Group",
+                            items: [
+                                {
+                                id: 20307,
+                                type: 175,
+                                image: null,
+                                loc: 'On top of middle toilet in Men\'s restroom'
+                                },
+                                {
+                                id: 20306,
+                                type: 175,
+                                image: null,
+                                loc: 'On top of the far toilet in the Women\'s restroom'
+                                },
+                            ]
                         },
                         {
                         id: 20317,
@@ -1343,16 +1360,21 @@ var data = {
                         loc: 'On desk 3 in the larger cubicle area'
                         },
                         {
-                        id: 20325,
-                        type: 171,
-                        image: null,
-                        loc: 'On the floor under desk 4 in the larger cubicle area'
-                        },
-                        {
-                        id: 20326,
-                        type: 175,
-                        image: null,
-                        loc: 'On desk 7 in the large cubicle area'
+                            type: "Group",
+                            items: [
+                                {
+                                id: 20325,
+                                type: 171,
+                                image: null,
+                                loc: 'On the floor under desk 4 in the larger cubicle area'
+                                },
+                                {
+                                id: 20326,
+                                type: 175,
+                                image: null,
+                                loc: 'On desk 7 in the large cubicle area'
+                                }
+                            ]
                         },
                         {
                         id: 20329,
@@ -1449,16 +1471,21 @@ var data = {
                     loc: 'Next to the entrance to the boarded off tunnel'
                     },
                     {
-                    id: 20341, // TODO find a way to group this with 20343 in the display
-                    type: 171,
-                    image: null,
-                    loc: 'On top of boxes in the large area outside of the tunnel'
-                    },
-                    {
-                    id: 20343,
-                    type: 171,
-                    image: null,
-                    loc: 'On the flatbed behind the wooden planks near the motorcycle'
+                        type: "Group",
+                        items: [
+                            {
+                            id: 20341,
+                            type: 171,
+                            image: null,
+                            loc: 'On top of boxes in the large area outside of the tunnel'
+                            },
+                            {
+                            id: 20343,
+                            type: 171,
+                            image: null,
+                            loc: 'On the flatbed behind the wooden planks near the motorcycle'
+                            }
+                        ]
                     },
                     {
                     id: 20342,
@@ -1585,16 +1612,21 @@ var data = {
                         loc: 'By the bed inside the ruins barracks area'
                         },
                         {
-                        id: 20378,
-                        type: 176,
-                        image: null,
-                        loc: 'Under a plant on the outskirts of the marsh area where the user must zipcord to the end of the level'
-                        },
-                        {
-                        id: 20377,
-                        type: 177,
-                        image: null,
-                        loc: 'On a rock located in the stream heading to the marsh area at the end of the level'
+                            type: "Group",
+                            items: [
+                                {
+                                id: 20378,
+                                type: 176,
+                                image: null,
+                                loc: 'Under a plant on the outskirts of the marsh area where the user must zipcord to the end of the level'
+                                },
+                                {
+                                id: 20377,
+                                type: 177,
+                                image: null,
+                                loc: 'On a rock located in the stream heading to the marsh area at the end of the level'
+                                }
+                            ]
                         }
                     ]
                 },
@@ -1879,16 +1911,21 @@ var data = {
                         loc: 'On the control panel for the trains in the control room OR On the large crate to the far right of the train tracks'
                         },
                         {
-                        id: 20495, // TODO group this with 20493
-                        type: 174,
-                        image: null,
-                        loc: 'In the pool of water with the shark'
-                        },
-                        {
-                        id: 20493,
-                        type: 174,
-                        image: null,
-                        loc: 'By the couch in the lounge area above the shark pool'
+                            type: "Group",
+                            items: [
+                                {
+                                id: 20495,
+                                type: 174,
+                                image: null,
+                                loc: 'In the pool of water with the shark'
+                                },
+                                {
+                                id: 20493,
+                                type: 174,
+                                image: null,
+                                loc: 'By the couch in the lounge area above the shark pool'
+                                }
+                            ]
                         },
                         {
                         id: 20494,
