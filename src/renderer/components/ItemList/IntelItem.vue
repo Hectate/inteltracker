@@ -2,12 +2,12 @@
     <div :style="{display: ifHelpShown(!settings.showHelp)}">
         <div v-if="info.type == 'Group'" :style="{outline: settings.iconGroupOutlineStyle}">
             <div v-for="(item, index) in info.items" :key="index" :style="{display: ifHelpShown(!settings.showHelp), backgroundColor: settings.iconGroupBackgroundColor}">
-                <component :is="groupIconComponent(item.type)" style="vertical-align: middle" :iconColor="[intelFound(item.id) ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
+                <component :is="groupIconComponent(item.type)" :inGroup="true" style="vertical-align: middle" :iconColor="[intelFound(item.id) ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
                 <span v-if="settings.showHelp" class="help" style="display: inline-block; vertical-align: middle">{{item.loc}}</span>
             </div>
         </div>
         <div v-else>
-            <component :is="iconComponent" style="vertical-align: middle" :iconColor="[intelFound(info.id) ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
+            <component :is="iconComponent" :inGroup="false" style="vertical-align: middle" :iconColor="[intelFound(info.id) ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
             <span v-if="settings.showHelp" class="help" style="display: inline-block; vertical-align: middle">{{info.loc}}</span>
         </div>
     </div>
@@ -71,13 +71,17 @@ export default {
     },
     name: 'intel-item',
     props: ['id', 'found', 'info'],
+    /*
+    // When the 'found' prop was moved/deleted, we lost the ability to detect the change this way. Moved to the icons instead...
     watch: {
         found() {
             if(this.$store.state.Settings.settings.scrollToScene) {
+                console.log('triggered');
                 this.$el.parentElement.scrollIntoView({behavior:"smooth"});
             }
         }
     },
+    */
     methods: {
         groupIconComponent: function(type) {
             return this.types[type];

@@ -1,5 +1,5 @@
 <template>
-<svg id="svg827":width="width" :height="height" version="1.1" viewBox="0 0 13.229 13.229" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<svg id="svg827" :width="width" :height="height" version="1.1" viewBox="0 0 13.229 13.229" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
  <metadata id="metadata821">
   <rdf:RDF>
    <cc:Work rdf:about="">
@@ -18,6 +18,9 @@
 export default {
     name:'icon-loose-files',
     props: {
+        inGroup: {
+            default: false
+        },
         iconColor: {
             default: 'red'
         },
@@ -28,6 +31,18 @@ export default {
         height: {
             type: [Number, String],
             default: '50'
+        }
+    },
+    watch: {
+        iconColor() {
+            if(this.$store.state.Settings.settings.scrollToScene) {
+                if(this.inGroup) {
+                    this.$el.parentElement.parentElement.parentElement.scrollIntoView({behavior:"smooth"});
+                }
+                else {
+                    this.$el.parentElement.parentElement.scrollIntoView({behavior:"smooth"});
+                }
+            }
         }
     }
 }

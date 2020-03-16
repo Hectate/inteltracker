@@ -18,6 +18,9 @@
 export default {
     name:'icon-envelope',
     props: {
+        inGroup: {
+            default: false
+        },
         iconColor: {
             default: 'red'
         },
@@ -28,6 +31,18 @@ export default {
         height: {
             type: [Number, String],
             default: '50'
+        }
+    },
+    watch: {
+        iconColor() {
+            if(this.$store.state.Settings.settings.scrollToScene) {
+                if(this.inGroup) {
+                    this.$el.parentElement.parentElement.parentElement.scrollIntoView({behavior:"smooth"});
+                }
+                else {
+                    this.$el.parentElement.parentElement.scrollIntoView({behavior:"smooth"});
+                }
+            }
         }
     }
 }
