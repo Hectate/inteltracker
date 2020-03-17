@@ -2,8 +2,10 @@
     <div :style="{display: ifHelpShown(!settings.showHelp)}">
         <div v-if="info.type == 'Group'" :style="{outline: settings.iconGroupOutlineStyle}">
             <div v-for="(item, index) in info.items" :key="index" :style="{display: ifHelpShown(!settings.showHelp), backgroundColor: settings.iconGroupBackgroundColor}">
-                <component :is="groupIconComponent(item.type)" :inGroup="true" style="vertical-align: middle" :iconColor="[intelFound(item.id) ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
-                <span v-if="settings.showHelp" class="help" style="display: inline-block; vertical-align: middle">{{item.loc}}</span>
+                <span v-if="showThisItem(info.items, item)">
+                    <component v-if="showThisItem(info.items, item)" :is="groupIconComponent(item.type)" :inGroup="true" style="vertical-align: middle" :iconColor="[intelFound(item.id) ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
+                    <span v-if="settings.showHelp" class="help" style="display: inline-block; vertical-align: middle">{{item.loc}}</span>
+                </span>
             </div>
         </div>
         <div v-else>
@@ -83,6 +85,29 @@ export default {
     },
     */
     methods: {
+        showThisItem: function(items, item) {
+            let result = false;
+            if(!this.settings.collapseIntelGroups) {
+                return true;
+            }
+            if(this.intelFound(item.id)) {
+                result = true;
+            }
+            else if (!this.isOneFound(items)) {
+                result = true;
+            }
+            return result;
+        },
+        isOneFound: function(items) {
+            let result = false;
+            items.forEach(item => {
+                if(this.intelFound(item.id)) {
+                    console.log(`ID ${item.id} found in group. isOneFound() is true`);
+                    result = true;
+                }
+            });
+            return result;
+        },
         groupIconComponent: function(type) {
             return this.types[type];
         },

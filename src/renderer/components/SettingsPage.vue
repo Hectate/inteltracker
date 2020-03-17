@@ -111,6 +111,16 @@
                 <p class="help">Allows you to show/hide scene groupings. If hidden, only mission titles will be shown.</p>
             </div>
             <div class="field">
+                <label class="label">Collapse Partial Intel Groups</label>
+                <div class="select">
+                    <select :value="settings.collapseIntelGroups" @change="updateCollapseIntelGroups">
+                        <option value="true">Hide Unfound Intel In Group</option>
+                        <option value="false">Always Show Both Intel Items In Group</option>
+                    </select>
+                </div>
+                <p class="help">Intel Groups have 2 items, this settings lets you hide the 'missing' item when you find the other.</p>
+            </div>
+            <div class="field">
                 <label class="label">Show Help Text</label>
                 <div class="select">
                     <select :value="settings.showHelp" @change="updateShowHelp">
@@ -148,7 +158,7 @@
         <footer class="footer">
             <div class="content has-text-centered">
                 <p><strong>IntelTracker</strong> coded by <i>Nathaniel "Hectate" Mitchell</i>, with content contributions by <i>hipp0cat</i>. The source code is licensed MIT.</p>
-                <p>Version {{settings.majorVersion}}.{{settings.minorVersion}}</p>
+                <p>Version 0.8.2</p>
             </div>
         </footer>
     </div>
@@ -204,6 +214,9 @@ export default {
         },
         updateShowScenes(e) {
             this.$store.dispatch('setShowScenes', e.target.value);
+        },
+        updateCollapseIntelGroups(e) {
+            this.$store.dispatch('setCollapseIntelGroups', e.target.value);
         },
         updateShowHelp(e) {
             this.$store.dispatch('setShowHelp', e.target.value);

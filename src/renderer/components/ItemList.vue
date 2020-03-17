@@ -497,7 +497,7 @@ var data = {
                         loc: 'On the wall at the beginning'
                         },
                         {
-                        id: 20091,
+                        id: 20091,  // TODO verify this one is working right?
                         type: 171,
                         image: null,
                         loc: 'In room next to 2 guards talking about Dieter OR on shelf in room with 2 guards talking about Dieter'

@@ -1,7 +1,5 @@
 const state = {
     settings: {
-        majorVersion:0,
-        minorVersion:8,
         backgroundColor: 'black',
         headingColor: 'white',
         textColor: 'white',
@@ -13,6 +11,7 @@ const state = {
         iconHeight: '14pt',
         showIcons: true,
         showScenes: true,
+        collapseIntelGroups: true,
         showHelp: false,
         scrollToScene: true,
         windowWidth:100,
@@ -54,6 +53,9 @@ const state = {
       },
       SET_SHOW_SCENES (state, bool) {
         state.settings.showScenes = (bool === 'true' ? true : false);
+      },
+      SET_COLLAPSE_INTEL_GROUPS (state, bool) {
+        state.settings.collapseIntelGroups = (bool === 'true' ? true : false);
       },
       SET_SHOW_HELP (state, bool) {
         state.settings.showHelp = (bool === 'true' ? true : false);
@@ -107,6 +109,9 @@ const state = {
     },
     setShowScenes ({commit}, bool) {
       commit('SET_SHOW_SCENES', bool);
+    },
+    setCollapseIntelGroups ({commit}, bool) {
+      commit('SET_COLLAPSE_INTEL_GROUPS', bool);
     },
     setShowHelp ({commit}, bool) {
       commit('SET_SHOW_HELP', bool);
