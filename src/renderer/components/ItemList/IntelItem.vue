@@ -1,16 +1,20 @@
 <template>
     <div :style="{display: ifHelpShown(!settings.showHelp)}">
-        <div v-if="info.type == 'Group'" :style="{outline: settings.iconGroupOutlineStyle}">
+        <div v-if="info.type == 'Group'" :style="{border: settings.iconGroupOutlineStyle, display: ifHelpShown(!settings.showHelp)}">
             <div v-for="(item, index) in info.items" :key="index" :style="{display: ifHelpShown(!settings.showHelp), backgroundColor: settings.iconGroupBackgroundColor}">
-                <span v-if="showThisItem(info.items, item)">
+                <span v-if="showThisItem(info.items, item)" style="display: inline-flex;">
                     <component v-if="showThisItem(info.items, item)" :is="groupIconComponent(item.type)" :inGroup="true" style="vertical-align: middle" :iconColor="[intelFound(item.id) ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
-                    <span v-if="settings.showHelp" class="help" style="display: inline-block; vertical-align: middle">{{item.loc}}</span>
+                    <span v-if="settings.showHelp" class="help" style="display: inline; vertical-align: middle">{{item.loc}}</span>
                 </span>
             </div>
         </div>
-        <div v-else>
-            <component :is="iconComponent" :inGroup="false" style="vertical-align: middle" :iconColor="[intelFound(info.id) ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
-            <span v-if="settings.showHelp" class="help" style="display: inline-block; vertical-align: middle">{{info.loc}}</span>
+        <div v-else :style="{display: ifHelpShown(!settings.showHelp)}">
+            <div :style="{display: ifHelpShown(!settings.showHelp)}">
+                <span style="display: inline-flex;">
+                    <component :is="groupIconComponent(info.type)" style="vertical-align: middle" :iconColor="[intelFound(info.id) ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
+                    <span v-if="settings.showHelp" class="help" style="display: inline; vertical-align: middle">{{info.loc}}</span>
+                </span>
+            </div>
         </div>
     </div>
 </template>
@@ -102,7 +106,6 @@ export default {
             let result = false;
             items.forEach(item => {
                 if(this.intelFound(item.id)) {
-                    console.log(`ID ${item.id} found in group. isOneFound() is true`);
                     result = true;
                 }
             });
@@ -112,7 +115,7 @@ export default {
             return this.types[type];
         },
         ifHelpShown: function(bool) {
-            if(bool) { return 'inline-block'; }
+            if(bool) { return 'inline-flex'; }
             else return 'block';
         },
         intelFound: function(id) {

@@ -15,18 +15,18 @@
                 <div style="padding-bottom: 10px" v-for="(scene, index2) in mission.scenes" :key="scene.num">
                     <p :style="{color: settings.headingColor}" v-if="index2 == 0" class="title is-4">{{mission.name}} ({{missionIntelsFound(index)}}/{{missionIntelCount(index)}})</p>
                     <p :style="{color: settings.textColor}" class="subtitle is-6">Scene {{scene.num}} ({{sceneIntelsFound(index,index2)}}/{{sceneIntelCount(index,index2)}})</p>
-                    <span v-if="settings.showIcons">
+                    <div v-if="settings.showIcons">
                         <intel-item v-for="item in scene.items" :key="item.id" :id="item.id" :info="item"></intel-item>
-                    </span>
+                    </div>
                 </div>
             </div>
             <div v-else>
                 <p :style="{color: settings.headingColor}" class="title is-4">{{mission.name}} ({{missionIntelsFound(index)}}/{{missionIntelCount(index)}})</p>
-                <span v-for="(scene, index2) in mission.scenes" :key="scene.num">
-                    <span v-if="settings.showIcons">
+                <div v-for="(scene, index2) in mission.scenes" :key="scene.num">
+                    <div v-if="settings.showIcons">
                         <intel-item v-for="item in scene.items" :key="item.id" :id="item.id" :info="item"></intel-item>
-                    </span>
-                </span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -497,10 +497,15 @@ var data = {
                         loc: 'On the wall at the beginning'
                         },
                         {
-                        id: 20091,  // TODO verify this one is working right?
-                        type: 171,
-                        image: null,
-                        loc: 'In room next to 2 guards talking about Dieter OR on shelf in room with 2 guards talking about Dieter'
+                            type: 'Group',
+                            items: [
+                                {
+                                id: 20091,
+                                type: 171,
+                                image: null,
+                                loc: 'On file cabinets in back office room further past the 2 guards talking about Dieter'
+                                }
+                            ]
                         },
                         {
                         id: 20096,
@@ -1348,10 +1353,15 @@ var data = {
                         loc: 'On the floor under a long table located in a room on the bottom floor OR Under a bench along the upper walkway overlooking the door the security camera control room'
                         },
                         {
-                        id: 20323,
-                        type: 176,
-                        image: null,
-                        loc: 'On a desk on the 2nd floor'
+                            type: 'Group',
+                            items: [
+                                {
+                                id: 20323,
+                                type: 176,
+                                image: null,
+                                loc: 'On a desk on the 2nd floor'
+                                },
+                            ]
                         },
                         {
                         id: 20327,
@@ -1699,10 +1709,15 @@ var data = {
                     num:1,
                     items:[
                         {
-                        id: 20401,
-                        type: 171,
-                        image: null,
-                        loc: 'By empty spacesuit alcove near beginning'
+                            type: 'Group',
+                            items: [
+                                {
+                                id: 20401,
+                                type: 171,
+                                image: null,
+                                loc: 'By empty spacesuit alcove near beginning'
+                                }
+                            ]
                         },
                         {
                         id: 20408,
