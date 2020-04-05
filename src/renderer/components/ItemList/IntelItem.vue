@@ -2,7 +2,7 @@
     <div :style="{display: ifHelpShown(!settings.showHelp)}">
         <div v-if="info.type == 'Group'" :style="{border: settings.iconGroupOutlineStyle, display: ifHelpShown(!settings.showHelp)}">
             <div v-for="(item, index) in info.items" :key="index" :style="{display: ifHelpShown(!settings.showHelp), backgroundColor: settings.iconGroupBackgroundColor}">
-                <span v-if="showThisItem(info.items, item)" style="display: inline-flex;">
+                <span v-if="showThisItem(info.items, item)" style="display: inline;">
                     <component v-if="showThisItem(info.items, item)" :is="groupIconComponent(item.type)" :inGroup="true" style="vertical-align: middle" :iconColor="[intelFound(item.id) ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
                     <span v-if="settings.showHelp" class="help" style="display: inline; vertical-align: middle">{{item.loc}}</span>
                 </span>
@@ -10,7 +10,7 @@
         </div>
         <div v-else :style="{display: ifHelpShown(!settings.showHelp)}">
             <div :style="{display: ifHelpShown(!settings.showHelp)}">
-                <span style="display: inline-flex;">
+                <span style="display: inline;">
                     <component :is="groupIconComponent(info.type)" style="vertical-align: middle" :iconColor="[intelFound(info.id) ? settings.iconFoundColor : settings.iconNotFoundColor]" :height="settings.iconHeight" :width="settings.iconWidth"></component>
                     <span v-if="settings.showHelp" class="help" style="display: inline; vertical-align: middle">{{info.loc}}</span>
                 </span>
