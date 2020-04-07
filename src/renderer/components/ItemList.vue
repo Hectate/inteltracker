@@ -2187,7 +2187,16 @@ export default {
             let i = 0;
             data.missions[mission].scenes.forEach(function(scene) {
                 scene.items.forEach(function(item) {
-                    if(self.$store.state.Intel.intels[item.id]) { i++; }
+                    if(self.$store.state.Intel.intels[item.id]) {
+                        i++;
+                    }
+                    else if (item.type == "Group") {
+                        item.items.forEach(function(subItem) {
+                            if(self.$store.state.Intel.intels[subItem.id]) {
+                                i++;
+                            }
+                        });
+                    }
                 });
             });
             return i;
@@ -2196,7 +2205,16 @@ export default {
             let self = this;
             let i = 0;
             data.missions[mission].scenes[scene].items.forEach(function(item) {
-                if(self.$store.state.Intel.intels[item.id]) { i++; }
+                if(self.$store.state.Intel.intels[item.id]) {
+                    i++;
+                }
+                else if (item.type == "Group") {
+                    item.items.forEach(function(subItem) {
+                        if(self.$store.state.Intel.intels[subItem.id]) {
+                            i++;
+                        }
+                    });
+                }
             });
             return i;
         },
