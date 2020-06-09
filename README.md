@@ -45,6 +45,8 @@ npm run build
 
 ```
 
+Note that ``inteltracker`` was written, tested, and built with Node v10.6.0 x64. Usage of a version manager like ``nvm`` is recommended to avoid breaking changes in newer versions (there are many, as I have learned).
+
 ---
 
 This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
