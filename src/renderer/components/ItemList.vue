@@ -1709,15 +1709,10 @@ var data = {
                     num:1,
                     items:[
                         {
-                            type: 'Group',
-                            items: [
-                                {
-                                id: 20401,
-                                type: 171,
-                                image: null,
-                                loc: 'By empty spacesuit alcove near beginning'
-                                }
-                            ]
+                        id: 20401,
+                        type: 171,
+                        image: null,
+                        loc: 'By empty spacesuit alcove near beginning OR On the floor to the right immediately after entering Goldenrod door'
                         },
                         {
                         id: 20408,
