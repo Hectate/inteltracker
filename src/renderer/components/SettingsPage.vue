@@ -158,7 +158,7 @@
         <footer class="footer">
             <div class="content has-text-centered">
                 <p><strong>IntelTracker</strong> coded by <i>Nathaniel "Hectate" Mitchell</i>, with content contributions by <i>hipp0cat</i>. The source code is licensed MIT.</p>
-                <p>Version 0.8.5</p>
+                <p>Version 0.8.6</p>
             </div>
         </footer>
     </div>
